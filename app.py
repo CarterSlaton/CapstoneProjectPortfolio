@@ -118,12 +118,10 @@ if page == "🏠 Overview":
     
     st.markdown("---")
     
-    st.header("🔗 Quick Links")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.link_button("🔗 GitHub Repository", "https://github.com/CarterSlaton/RouteMaker")
+    st.header("🔗 GitHub Link")
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.link_button("📖 Documentation", "https://github.com/CarterSlaton/RouteMaker#readme")
+        st.link_button("🔗 GitHub Repository", "https://github.com/CarterSlaton/RouteMaker", use_container_width=True)
     
     st.markdown("---")
     
@@ -863,13 +861,13 @@ elif page == "📊 Metrics & Testing":
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.metric("Test Cases", "21", delta="TC20-TC40")
+        st.metric("Test Cases", "21")
     with col2:
-        st.metric("Requirements", "13", delta="FR1-FR7 + NFR")
+        st.metric("Requirements", "13")
     with col3:
-        st.metric("Pass Rate", "95%", delta="+5%")
+        st.metric("Pass Rate", "95%")
     with col4:
-        st.metric("Code Coverage", "85%", delta="+10%")
+        st.metric("Code Coverage", "85%")
     
     st.markdown("---")
     
@@ -1034,13 +1032,13 @@ elif page == "🚀 Deployment":
     
     deploy_data = {
         "Component": ["Database", "Frontend", "Repository"],
-        "Service": ["MongoDB Atlas", "Vercel (pending)", "GitHub"],
+        "Service": ["MongoDB Atlas", "Vercel", "GitHub"],
         "URL": [
             "routemaker.g5daa9x.mongodb.net",
-            "TBD",
+            "vercel.com/carterslatons-projects/route-maker",
             "github.com/CarterSlaton/RouteMaker"
         ],
-        "Status": ["✅ Live", "🟡 Ready", "✅ Updated"]
+        "Status": ["✅ Live", "✅ Live", "✅ Updated"]
     }
     
     df_deploy = pd.DataFrame(deploy_data)
@@ -1151,10 +1149,8 @@ npm run preview
             st.info(f"{icon} {item}")
 
 # Screenshots Page
-elif page == "📱 Screenshots":
+elif page == "📱 Screenshots & Video":
     st.title("📱 Screenshots & Demos")
-    
-    st.info("📸 **Note:** Screenshots can be added here by placing image files in the `/assets` folder and updating this section.")
     
     st.header("🖼️ Application Screenshots")
     
@@ -1234,9 +1230,11 @@ elif page == "📱 Screenshots":
     
     st.markdown("---")
     
-    st.header("🔗 Project Links")
+    st.header("🔗 Project Link")
     
-    st.link_button("📂 GitHub Repository", "https://github.com/CarterSlaton/RouteMaker", use_container_width=True)
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.link_button("📂 GitHub Repository", "https://github.com/CarterSlaton/RouteMaker", use_container_width=True)
 
 # Footer
 st.markdown("---")
